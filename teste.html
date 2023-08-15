@@ -5,45 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>linguagem ruim do kanso</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        form {
-            display: inline-block;
-            text-align: left;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"], input[type="tel"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+        /* CSS centralizar saporra */
     </style>
 </head>
 <body>
     <h1>Rede Wi-Fi BBNETUP</h1>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLScC0h6itE6wAt19svEItnUcf48EfdrWSSldze__6exLzDa1Mg/viewform?embedded=true" width="640" height="586" frameborder="0" marginheight="0" marginwidth="0" method="post">
+    <form onsubmit="liberarAcesso(); return false;">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -52,5 +19,27 @@
         
         <button type="submit">Conectar</button>
     </form>
+
+    <script>
+        function liberarAcesso() {
+            var nome = document.getElementById('nome').value;
+            var telefone = document.getElementById('telefone').value;
+
+            // mostra os dados em um alerta
+            alert("Nome: " + nome + "\nTelefone: " + telefone);
+
+            // adicionar a lógica para liberar o acesso à internet
+            // substituir o endereçoMAC pelo endereço MAC do dispositivo q vai ser liberado
+            var enderecoMAC = "00:11:22:33:44:55";
+            liberarAcessoNoRoteador(enderecoMAC);
+        }
+
+        function liberarAcessoNoRoteador(mac) {
+            // Código para enviar uma requisição ao roteador para desbloquear o endereço MAC
+            // Isso pode envolver uma chamada AJAX, requisição HTTP ou outro método suportado pelo roteador.
+            // Consulte a documentação do roteador para entender como fazer isso.
+            // A implementação exata dependerá do modelo e das configurações do roteador.
+        }
+    </script>
 </body>
 </html>
